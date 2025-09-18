@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="MonitoramentoCestaBasica"/>
+        <attribute name="authors" value="luana"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2025-09-18 03:27:22 AM"/>
+        <attribute name="created" value="bHVhbmE7QUdOT1M7MjAyNS0wOS0xNzsxMDoxMDo1MSBQTTsyMTgz"/>
+        <attribute name="edited" value="bHVhbmE7QUdOT1M7MjAyNS0wOS0xODswMzoyNzoyMiBBTTsxOzIyODU="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="nome" type="String" array="True" size="3"/>
+            <assign variable="nome[0]" expression="&quot;Arroz&quot;"/>
+            <assign variable="nome[1]" expression="&quot;Feij&#227;o&quot;"/>
+            <assign variable="nome[2]" expression="&quot;A&#231;ucar&quot;"/>
+            <declare name="precoAnterior" type="Real" array="True" size="3"/>
+            <assign variable="precoAnterior[0]" expression="20.24"/>
+            <assign variable="precoAnterior[1]" expression="8.07"/>
+            <assign variable="precoAnterior[2]" expression="6.98"/>
+            <declare name="precoAtual" type="Real" array="True" size="3"/>
+            <assign variable="precoAtual[0]" expression="23.79"/>
+            <assign variable="precoAtual[1]" expression="8.00"/>
+            <assign variable="precoAtual[2]" expression="6.98"/>
+            <declare name="variacao" type="Real" array="True" size="3"/>
+            <declare name="i" type="Integer" array="False" size=""/>
+            <for variable="i" start="0" end="2" direction="inc" step="1">
+                <assign variable="variacao[i]" expression="(precoAtual[i] -  precoAnterior[i])/precoAnterior[i]*100"/>
+            </for>
+        </body>
+    </function>
+</flowgorithm>
