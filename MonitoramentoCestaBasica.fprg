@@ -4,9 +4,9 @@
         <attribute name="name" value="MonitoramentoCestaBasica"/>
         <attribute name="authors" value="luana"/>
         <attribute name="about" value=""/>
-        <attribute name="saved" value="2025-09-18 03:27:22 AM"/>
+        <attribute name="saved" value="2025-09-18 01:08:18 PM"/>
         <attribute name="created" value="bHVhbmE7QUdOT1M7MjAyNS0wOS0xNzsxMDoxMDo1MSBQTTsyMTgz"/>
-        <attribute name="edited" value="bHVhbmE7QUdOT1M7MjAyNS0wOS0xODswMzoyNzoyMiBBTTsxOzIyODU="/>
+        <attribute name="edited" value="bHVhbmE7QUdOT1M7MjAyNS0wOS0xODswMTowODoxOCBQTTsyOzIzMDM="/>
     </attributes>
     <function name="Main" type="None" variable="">
         <parameters/>
@@ -27,6 +27,24 @@
             <declare name="i" type="Integer" array="False" size=""/>
             <for variable="i" start="0" end="2" direction="inc" step="1">
                 <assign variable="variacao[i]" expression="(precoAtual[i] -  precoAnterior[i])/precoAnterior[i]*100"/>
+            </for>
+            <declare name="situacao" type="String" array="True" size="3"/>
+            <for variable="i" start="0" end="2" direction="inc" step="1">
+                <if expression="variacao[i] &lt; 0">
+                    <then>
+                        <assign variable="situacao[i]" expression="&quot;QUEDA&quot;"/>
+                    </then>
+                    <else>
+                        <if expression="variacao[i] &gt; 0">
+                            <then>
+                                <assign variable="situacao[i]" expression="&quot;AUMENTO&quot;"/>
+                            </then>
+                            <else>
+                                <assign variable="situacao[i]" expression="&quot;EST&#193;VEL&quot;"/>
+                            </else>
+                        </if>
+                    </else>
+                </if>
             </for>
         </body>
     </function>
