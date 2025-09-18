@@ -4,9 +4,9 @@
         <attribute name="name" value="MonitoramentoCestaBasica"/>
         <attribute name="authors" value="luana"/>
         <attribute name="about" value=""/>
-        <attribute name="saved" value="2025-09-18 01:08:18 PM"/>
+        <attribute name="saved" value="2025-09-18 01:48:57 PM"/>
         <attribute name="created" value="bHVhbmE7QUdOT1M7MjAyNS0wOS0xNzsxMDoxMDo1MSBQTTsyMTgz"/>
-        <attribute name="edited" value="bHVhbmE7QUdOT1M7MjAyNS0wOS0xODswMTowODoxOCBQTTsyOzIzMDM="/>
+        <attribute name="edited" value="bHVhbmE7QUdOT1M7MjAyNS0wOS0xODswMTo0ODo1NyBQTTszOzIzMTE="/>
     </attributes>
     <function name="Main" type="None" variable="">
         <parameters/>
@@ -45,6 +45,15 @@
                         </if>
                     </else>
                 </if>
+            </for>
+            <for variable="i" start="0" end="2" direction="inc" step="1">
+                <output expression="&quot;Nome do produto: &quot; &amp; nome[i]" newline="True"/>
+                <output expression="&quot;Pre&#231;o anterior: R$ &quot; &amp; ToFixed(precoAnterior[i],2)" newline="True"/>
+                <output expression="&quot;Preco atual: R$ &quot; &amp; ToFixed(precoAtual[i],2)" newline="True"/>
+                <output expression="&quot;Varia&#231;&#227;o: &quot; &amp; ToFixed(variacao[i],2)" newline="False"/>
+                <output expression="&quot;%&quot;" newline="True"/>
+                <output expression="&quot;Situa&#231;&#227;o:  &quot; &amp; situacao[i]" newline="True"/>
+                <output expression="&quot;----------------------------------------&quot;" newline="True"/>
             </for>
         </body>
     </function>
