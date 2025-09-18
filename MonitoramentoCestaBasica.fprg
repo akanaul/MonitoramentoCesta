@@ -4,29 +4,36 @@
         <attribute name="name" value="MonitoramentoCestaBasica"/>
         <attribute name="authors" value="luana"/>
         <attribute name="about" value=""/>
-        <attribute name="saved" value="2025-09-18 01:48:57 PM"/>
+        <attribute name="saved" value="2025-09-18 08:31:35 PM"/>
         <attribute name="created" value="bHVhbmE7QUdOT1M7MjAyNS0wOS0xNzsxMDoxMDo1MSBQTTsyMTgz"/>
-        <attribute name="edited" value="bHVhbmE7QUdOT1M7MjAyNS0wOS0xODswMTo0ODo1NyBQTTszOzIzMTE="/>
+        <attribute name="edited" value="bHVhbmE7QUdOT1M7MjAyNS0wOS0xODswODozMTozNSBQTTs0OzIzMDc="/>
     </attributes>
     <function name="Main" type="None" variable="">
         <parameters/>
         <body>
             <declare name="nome" type="String" array="True" size="3"/>
-            <assign variable="nome[0]" expression="&quot;Arroz&quot;"/>
-            <assign variable="nome[1]" expression="&quot;Feij&#227;o&quot;"/>
-            <assign variable="nome[2]" expression="&quot;A&#231;ucar&quot;"/>
             <declare name="precoAnterior" type="Real" array="True" size="3"/>
-            <assign variable="precoAnterior[0]" expression="20.24"/>
-            <assign variable="precoAnterior[1]" expression="8.07"/>
-            <assign variable="precoAnterior[2]" expression="6.98"/>
             <declare name="precoAtual" type="Real" array="True" size="3"/>
-            <assign variable="precoAtual[0]" expression="23.79"/>
-            <assign variable="precoAtual[1]" expression="8.00"/>
-            <assign variable="precoAtual[2]" expression="6.98"/>
-            <declare name="variacao" type="Real" array="True" size="3"/>
             <declare name="i" type="Integer" array="False" size=""/>
+            <declare name="iChar" type="String" array="True" size="3"/>
+            <assign variable="iChar[0]" expression="&quot;Primeiro&quot;"/>
+            <assign variable="iChar[1]" expression="&quot;Segundo&quot;"/>
+            <assign variable="iChar[2]" expression="&quot;Terceiro&quot;"/>
             <for variable="i" start="0" end="2" direction="inc" step="1">
-                <assign variable="variacao[i]" expression="(precoAtual[i] -  precoAnterior[i])/precoAnterior[i]*100"/>
+                <output expression="&quot;Digite o nome do &quot; &amp; iChar[i]" newline="False"/>
+                <output expression="&quot; produto: &quot;" newline="True"/>
+                <input variable="nome[i]"/>
+                <declare name="typeChar" type="String" array="False" size=""/>
+                <output expression="&quot;Digite o pre&#231;o anterior do &quot; &amp; iChar[i]" newline="False"/>
+                <output expression="&quot; produto: &quot;" newline="True"/>
+                <input variable="precoAnterior[i]"/>
+                <output expression="&quot;Digite o pre&#231;o atual do &quot; &amp; iChar[i]" newline="False"/>
+                <output expression="&quot; produto: &quot;" newline="True"/>
+                <input variable="precoAtual[i]"/>
+            </for>
+            <declare name="variacao" type="Real" array="True" size="3"/>
+            <for variable="i" start="0" end="2" direction="inc" step="1">
+                <assign variable="variacao[i]" expression="(precoAnterior[i] - precoAtual[i])/precoAnterior[i]*100"/>
             </for>
             <declare name="situacao" type="String" array="True" size="3"/>
             <for variable="i" start="0" end="2" direction="inc" step="1">
